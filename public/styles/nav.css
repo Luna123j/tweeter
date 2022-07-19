@@ -1,23 +1,26 @@
-nav{
+nav {
   height: 120 px;
   width: 100%;
   background-color: #4056A1;
   padding-top: 25px;
   padding-bottom: 10px;
   padding-left: 1.5em;
+  padding-right: 1.5em;
   color: #fff;
   position: absolute;
- }
+  display: flex;
+  justify-content: space-between;
+}
 
- nav span{
+nav span {
   font-family: 'Bungee', cursive;
- }
+}
 
- nav a{
-  padding-left: 500px;
-  font-size: 20px;
- }
- nav a i{
+nav a {
+  font-size: 60%;
+}
+
+nav a i {
   color: red;
-
- }
+  padding-left: 50px;
+}
