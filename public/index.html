@@ -13,7 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
-   <link rel="stylesheet" href = " https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
   <!-- App CSS -->
@@ -33,25 +33,35 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <a class = right-coner> <strong>Write</strong> a new tweet
-    <i class="fa-solid fa-angles-down"></i></a>
+    <a class=right-coner> <strong>Write</strong> a new tweet
+      <i class="fa-solid fa-angles-down"></i></a>
   </nav>
   <header>
     <div>
-        <img src="/images/profile-hex.png"> 
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-        <h2>Your Name</h2>
+      <h2>Your Name</h2>
     </div>
-</header>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action = /tweets/ method="POST">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 
-  
+
 </body>
 
 </html>
