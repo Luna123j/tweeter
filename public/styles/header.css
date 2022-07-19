@@ -1,0 +1,17 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-image: url(/images/back-pattern.png);
+  background-color: orange;
+  padding-top: 70px;
+}
+
+header div{
+  display: flex;
+  justify-content: center;
+
+}
+header br{
+display: none;
+}
+
