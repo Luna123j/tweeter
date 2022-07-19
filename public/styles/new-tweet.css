@@ -23,3 +23,7 @@ section textarea {
   resize: none;
   overflow: hidden;
 }
+
+.counter-red{
+  color: red;
+}
