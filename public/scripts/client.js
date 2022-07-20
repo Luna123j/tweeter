@@ -22,7 +22,12 @@ $(document).ready(function() {
     return markup;
   };
 
+  const creatAlertMessage = function(message) {
+    $("#alertMessage").text(message);
+  };
+
   const renderTweets = function(tweetDataArr) {
+    $('#tweets-container').empty();
     for (const tweetDataObj of tweetDataArr) {
       const $tweet = createTweetElement(tweetDataObj);
       $('#tweets-container').append($tweet);
@@ -32,9 +37,11 @@ $(document).ready(function() {
   const loadTweets = function() {
     $('#submitTweet').submit(function() {
       $.ajax({
-        url: "/tweets",
+        method: "GET",
+        url: "/tweets/",
         success: (response) => {
-          renderTweets(response);
+          console.log(response);
+          renderTweets(response.reverse());
         },
         error: (error) => {
           console.log(error);
@@ -43,19 +50,35 @@ $(document).ready(function() {
     });
   };
 
+  loadTweets();
+  $('#tweet-text').click(() => {
+    $("#alertMessage").empty();
+  });
+
   $('#submitTweet').submit(function(event) {
 
     event.preventDefault();
     const textData = $(this).serialize();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: textData,
-      error: (error) => {
-        console.log(error);
+
+    if (textData.length === 5) {
+      creatAlertMessage("Tweet contents should not be empty");
+    } else {
+      if (textData.length > 145) {
+        creatAlertMessage("Tweet contents should not exceed 140 letters");
+      } else {
+        $('#tweet-text').val("");
+        $.ajax({
+          method: "POST",
+          url: "/tweets/",
+          data: textData,
+          error: (error) => {
+            console.log(error);
+          }
+        });
       }
-    });
+    }
+
   });
 
-  loadTweets();
+
 });
