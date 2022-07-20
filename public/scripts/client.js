@@ -6,7 +6,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-
   const createTweetElement = function(tweetDataObj) {
     const markup = `<article class="show-tweet">
     <h5>
@@ -17,7 +16,7 @@ $(document).ready(function() {
       ${tweetDataObj.content.text}
     </p>
     <footer>
-      <p>${tweetDataObj.created_at}}</p>
+      <p>${timeago.format(tweetDataObj.created_at) }</p>
       <p> <i class="fa-solid fa-flag"></i> <i class='fas fa-retweet'></i> <i class="fa-solid fa-heart"></i> </p>
     </footer>
   </article>`;
@@ -30,6 +29,27 @@ $(document).ready(function() {
       $('#tweets-container').append($tweet);
     }
   };
+
+  const loadTweets = function() {
+    $('#submitTweet').submit(function() {
+      $.get("/tweets", function(data, status) {
+        console.log("Data: " + data.user + "\nStatus: " + status);
+      });
+
+    });
+  }
+
+  $('#submitTweet').submit(function(event) {
+
+    event.preventDefault();
+    console.log($(this).serialize());
+    const textData = $(this).serialize();
+    $.post("/tweets", textData);
+  });
+
+  loadTweets();
+
+
 
   // Test / driver code (temporary). Eventually will get this from the server.
   const data = [
