@@ -7,9 +7,10 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
   color: #fff;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: space-between;
+  top:0;
 }
 
 nav span {
