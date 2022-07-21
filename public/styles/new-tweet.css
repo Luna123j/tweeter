@@ -21,15 +21,28 @@ section textarea {
   border-width: 0 0 4px;
   background-color: transparent;
   resize: none;
-  overflow: hidden;
+  font-size: large;
+  font-weight: bold;
 }
 
 .counter-red{
   color: red;
 }
 
-#alertMessage {
+#submitTweet{
+  margin-top: 40px;
+}
+
+#alertMessage{
+  display: none;
   color: red;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
+  border-style: solid;
+  border-color: red;
+  border-width: 5%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 2%;
+  
 }

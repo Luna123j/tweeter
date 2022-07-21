@@ -23,7 +23,22 @@ $(document).ready(function() {
   };
 
   const creatAlertMessage = function(message) {
-    $("#alertMessage").text(message);
+    $("#alertMessage").empty();
+    if (message === "emptyAlert") {
+      const alert = `<i class="fa-solid fa-triangle-exclamation"></i>
+      Tweet contents should not be empty.
+        <i class="fa-solid fa-triangle-exclamation"></i>`;
+      $("#alertMessage").append(alert);
+    }
+
+    if (message === "lengthAlert") {
+      const alert = `<i class="fa-solid fa-triangle-exclamation"></i>
+      Too long. Tweet contents should not exceed 140 letters.
+        <i class="fa-solid fa-triangle-exclamation"></i>`;
+      $("#alertMessage").append(alert);
+    }
+
+
   };
 
   const renderTweets = function(tweetDataArr) {
@@ -34,43 +49,57 @@ $(document).ready(function() {
     }
   };
 
+  //get response when submit
   const loadTweets = function() {
-    $('#submitTweet').submit(function() {
-      $.ajax({
-        method: "GET",
-        url: "/tweets/",
-        success: (response) => {
-          console.log(response);
-          renderTweets(response.reverse());
-        },
-        error: (error) => {
-          console.log(error);
-        }
-      });
+    console.log("success call loadtweets");
+    $.ajax({
+      method: "GET",
+      url: "/tweets/",
+      success: (response) => {
+        console.log(response);
+        renderTweets(response.reverse());
+      },
+      error: (error) => {
+        console.log(error);
+      }
     });
+
   };
 
   loadTweets();
+
+  // for hide alert box
   $('#tweet-text').click(() => {
     $("#alertMessage").empty();
+    $("#alertMessage").slideUp("slow");
   });
 
+  //post when submit
   $('#submitTweet').submit(function(event) {
 
     event.preventDefault();
-    const textData = $(this).serialize();
 
-    if (textData.length === 5) {
-      creatAlertMessage("Tweet contents should not be empty");
+    const textData = $(this).serialize();
+    const tweetLength = $('#tweet-text').val().length;
+
+    if (tweetLength === 0) {
+      $("#alertMessage").slideDown("fast", creatAlertMessage("emptyAlert"));
     } else {
-      if (textData.length > 145) {
-        creatAlertMessage("Tweet contents should not exceed 140 letters");
+      if (tweetLength > 140) {
+        $("#alertMessage").slideDown("slow", creatAlertMessage("lengthAlert"));
       } else {
+
+        //empty text area
         $('#tweet-text').val("");
+
+        //post
         $.ajax({
           method: "POST",
           url: "/tweets/",
           data: textData,
+          success: () => {
+            loadTweets();
+          },
           error: (error) => {
             console.log(error);
           }
@@ -80,5 +109,6 @@ $(document).ready(function() {
 
   });
 
+  //
 
 });
