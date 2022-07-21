@@ -5,11 +5,13 @@
   border-style: solid;
   border-width: 4px;
   padding: 1%;
+  
 }
 
-.show-tweet:hover {
+.show-tweet:hover{
   box-shadow: 5px 10px #888888;
 }
+
 
 .tweet-content {
   width: 100%;
@@ -18,20 +20,22 @@
   border-style: solid;
   padding: 5%;
   margin-bottom: 0px;
-  margin-top: 0px;
+  margin-top: 0px;;
 }
 
 h5 {
   display: flex;
   justify-content: space-between;
   padding: 1%;
-  margin: 1%;
+  margin: 1%; 
   align-items: center;
+  
+  
 }
 
 #login-name {
-  font-family: "Source Sans Pro", sans-serif;
-  color: rgb(205, 199, 199);
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(205, 199, 199)
 }
 
 article footer {
@@ -41,25 +45,26 @@ article footer {
   font-size: small;
 }
 
-.smallIcon {
+.smallIcon{
   height: 50px;
-  float: left;
+  float: left; 
 }
 
-p {
+p{
   align-self: center;
 }
 
-article i:hover {
+article i:hover{
+ color: darkgoldenrod;
+}
+
+.change-color{
   color: darkgoldenrod;
 }
 
-.change-color {
-  color: darkgoldenrod;
-}
-
-.username {
+.username{
   display: flex;
   align-items: center;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
+

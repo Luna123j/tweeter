@@ -4,18 +4,24 @@ header {
   background-image: url(/images/back-pattern.png);
   background-color: orange;
   padding-top: 70px;
+
+  div {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  br {
+    display: none;
+  }
 }
-header div {
-  display: flex;
-  justify-content: center;
-}
-header br {
-  display: none;
-}
+
+
 
 @media screen and (min-width: 768px) {
   header {
     width: 50%;
     margin-left: 5%;
   }
+
 }

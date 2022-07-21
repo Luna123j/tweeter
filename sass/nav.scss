@@ -12,10 +12,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   top: 0;
+
+  span {
+    font-family: 'Bungee', cursive;
+  }
+
 }
-nav span {
-  font-family: "Bungee", cursive;
-}
+
 
 .rightConerIcon {
   display: flex;
@@ -31,6 +34,7 @@ nav span {
   color: red;
 }
 
+
 #scrollUpButton {
   display: none;
   border: none;
@@ -42,6 +46,7 @@ nav span {
   color: white;
   background-color: red;
   border-radius: 50%;
+
 }
 
 @media screen and (max-width: 768px) {
