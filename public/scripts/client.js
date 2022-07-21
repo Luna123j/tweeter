@@ -94,7 +94,7 @@ $(document).ready(function() {
 
         //empty text area
         $('#tweet-text').val("");
-
+        $('#char-counter').text("140");
         //post
         $.ajax({
           method: "POST",
@@ -121,7 +121,7 @@ $(document).ready(function() {
   //scroll up button
   $(window).scroll(function() {
     console.log($(document).scrollTop())
-    if ($(document).scrollTop() > 500) {
+    if ($(document).scrollTop() > 300) {
       $("#scrollUpButton").css("display", "block");
     } else {
       $("#scrollUpButton").css("display", "none");

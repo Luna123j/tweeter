@@ -19,6 +19,8 @@
   padding: 5%;
   margin-bottom: 0px;
   margin-top: 0px;
+  word-wrap: break-word;
+  
 }
 
 h5 {
