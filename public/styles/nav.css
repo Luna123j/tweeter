@@ -10,6 +10,7 @@ nav {
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   top:0;
 }
 
@@ -17,11 +18,31 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
-nav a {
+.rightConerIcon{
+  display:flex;
+  flex-direction: column;
   font-size: 60%;
 }
 
-nav a i {
+.rightConerIcon p{
+  margin:0;
+}
+
+#navAngleIcon {
   color: red;
-  padding-left: 50px;
+}
+
+
+#scrollUpButton{
+  display: none; 
+  border: none;
+  bottom: 20px;
+  right: 30px; 
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+
 }

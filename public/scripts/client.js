@@ -52,6 +52,8 @@ $(document).ready(function() {
   //get response when submit
   const loadTweets = function() {
     console.log("success call loadtweets");
+    $("#new-tweet").slideUp("fast");
+
     $.ajax({
       method: "GET",
       url: "/tweets/",
@@ -71,7 +73,7 @@ $(document).ready(function() {
   // for hide alert box
   $('#tweet-text').click(() => {
     $("#alertMessage").empty();
-    $("#alertMessage").slideUp("slow");
+    $("#alertMessage").slideUp("fast");
   });
 
   //post when submit
@@ -83,11 +85,12 @@ $(document).ready(function() {
     const tweetLength = $('#tweet-text').val().length;
 
     if (tweetLength === 0) {
-      $("#alertMessage").slideDown("fast", creatAlertMessage("emptyAlert"));
+      $("#alertMessage").slideDown("slow", creatAlertMessage("emptyAlert"));
     } else {
       if (tweetLength > 140) {
         $("#alertMessage").slideDown("slow", creatAlertMessage("lengthAlert"));
       } else {
+
 
         //empty text area
         $('#tweet-text').val("");
@@ -109,6 +112,24 @@ $(document).ready(function() {
 
   });
 
-  //
+  //arrow effect 
+  $("#navAngleIcon").click(function() {
+    $("#new-tweet").slideDown("slow");
+    $("#tweet-text").focus();
+  });
+
+  //scroll up button
+  $(window).scroll(function() {
+    console.log($(document).scrollTop())
+    if ($(document).scrollTop() > 500) {
+      $("#scrollUpButton").css("display", "block");
+    } else {
+      $("#scrollUpButton").css("display", "none");
+    }
+  });
+
+  $("#scrollUpButton").on("click", function() {
+    $(document).scrollTop(0);
+  });
 
 });

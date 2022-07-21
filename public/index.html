@@ -38,8 +38,10 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <a> <strong>Write</strong> a new tweet <br>
-      <i id = "navIcon" class="fa-solid fa-angles-down"></i></a>
+    <div class="rightConerIcon">
+      <p> <strong>Write</strong> a new tweet </p>
+      <p><i id="navAngleIcon" class="fa-solid fa-angles-down"></i></p>
+    </div>
   </nav>
   <header>
     <div>
@@ -53,20 +55,24 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
-      <div id = "alertMessage">
+    <section id="new-tweet" class="new-tweet">
+      <div id="alertMessage">
       </div>
-      <form id="submitTweet" action=/tweets/ >
-      <label for="tweet-text">What are you humming about?</label>
-      <textarea name="text" id="tweet-text"></textarea>
-      <div>
-        <button type="submit">Tweet</button>
-        <output id="char-counter" name="counter" class="counter" for="tweet-text">140</output>
-      </div>
+      <form action=/tweets/ id="submitTweet">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output id="char-counter" name="counter" class="counter" for="tweet-text">140</output>
+        </div>
       </form>
     </section>
     <section id="tweets-container">
     </section>
+
+    <div>
+      <button id = "scrollUpButton"> <i class="fa-solid fa-angles-up"></i> </button>
+    </div>
   </main>
 
 
