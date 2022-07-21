@@ -46,3 +46,9 @@ nav span {
   border-radius: 50%;
 
 }
+
+@media screen and (max-width: 768px) {
+  nav {
+    background-color: transparent;
+  }
+}

@@ -114,7 +114,7 @@ $(document).ready(function() {
 
   //arrow effect 
   $("#navAngleIcon").click(function() {
-    $("#new-tweet").slideDown("slow");
+    $("#new-tweet").slideToggle("slow");
     $("#tweet-text").focus();
   });
 
