@@ -8,14 +8,13 @@ header {
   div {
     display: flex;
     justify-content: center;
-
   }
 
   br {
     display: none;
   }
-}
 
+}
 
 
 @media screen and (min-width: 768px) {
@@ -23,5 +22,4 @@ header {
     width: 50%;
     margin-left: 5%;
   }
-
 }

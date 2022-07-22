@@ -6,9 +6,16 @@
   border-width: 4px;
   padding: 1%;
 }
-
 .show-tweet:hover {
   box-shadow: 5px 10px #888888;
+}
+
+h5 {
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  margin: 1%;
+  align-items: center;
 }
 
 .tweet-content {
@@ -20,15 +27,12 @@
   margin-bottom: 0px;
   margin-top: 0px;
   word-wrap: break-word;
-  
 }
 
-h5 {
+.username {
   display: flex;
-  justify-content: space-between;
-  padding: 1%;
-  margin: 1%;
   align-items: center;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 #login-name {
@@ -43,7 +47,7 @@ article footer {
   font-size: small;
 }
 
-.smallIcon {
+.smallAvatar {
   height: 50px;
   float: left;
 }
@@ -52,16 +56,6 @@ p {
   align-self: center;
 }
 
-article i:hover {
+.iconHover:hover {
   color: darkgoldenrod;
-}
-
-.change-color {
-  color: darkgoldenrod;
-}
-
-.username {
-  display: flex;
-  align-items: center;
-  font-family: "Source Sans Pro", sans-serif;
 }

@@ -8,7 +8,7 @@ $(document).ready(function() {
   const createTweetElement = function(tweetDataObj) {
     const markup = `<article class="show-tweet">
     <h5>
-      <div> <img class="smallIcon" src="${tweetDataObj.user.avatars}"> <p class="username">${tweetDataObj.user.name}</p> </div>
+      <div> <img class="smallAvatar" src="${tweetDataObj.user.avatars}"> <p class="username">${tweetDataObj.user.name}</p> </div>
       <div id="login-name">${tweetDataObj.user.handle}</div>
     </h5>
     <p class="tweet-content">
@@ -16,7 +16,7 @@ $(document).ready(function() {
     </p>
     <footer>
       <p>${timeago.format(tweetDataObj.created_at)}</p>
-      <p> <i class="fa-solid fa-flag"></i> <i class='fas fa-retweet'></i> <i class="fa-solid fa-heart"></i> </p>
+      <p> <i class="fa-solid fa-flag iconHover"></i> <i class='fas fa-retweet iconHover'></i> <i class="fa-solid fa-heart iconHover"></i> </p>
     </footer>
   </article>`;
     return markup;
